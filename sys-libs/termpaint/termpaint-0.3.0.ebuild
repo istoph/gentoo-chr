@@ -3,7 +3,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{9..13} )
 inherit meson python-any-r1
 
 DESCRIPTION="low level terminal interface library"
