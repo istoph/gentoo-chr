@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>chr@istoph.de</email>
+    <name>Christoph Hueffelmann</name>
+  </maintainer>
+  <use>
+    <flag name="tools">Install additional tools</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">istoph/editor</remote-id>
+    <bugs-to>https://github.com/istoph/editor/issues/new/choose</bugs-to>
+    <maintainer>
+      <name>Christoph Hueffelmann</name>
+      <email>chr@istoph.de</email>
+    </maintainer>
+  </upstream>
+</pkgmetadata>
