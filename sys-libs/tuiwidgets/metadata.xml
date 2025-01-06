@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>chr@istoph.de</email>
+    <name>Christoph Hueffelmann</name>
+  </maintainer>
+  <use>
+    <flag name="tools">Install additional tools</flag>
+  </use>
+  <upstream>
+    <remote-id type="github">tuiwidgets/tuiwidgets</remote-id>
+    <doc>https://tuiwidgets.namepad.de/latest/</doc>
+    <bugs-to>https://github.com/tuiwidgets/tuiwidgets/issues/new/choose</bugs-to>
+    <maintainer>
+      <name>Martin Hostettler</name>
+      <email>textshell@uchuujin.de</email>
+    </maintainer>
+  </upstream>
+</pkgmetadata>
