@@ -1,0 +1,13 @@
+<repositories version="1.0">
+    <repo priority="-900" status="unofficial">
+        <name>zigford</name>
+        <description>Christoph Hueffelmann</description>
+        <homepage>https://blog.chr.istoph.de</homepage>
+        <owner>
+            <email>chr@istoph.de</email>
+            <name>Christoph Hueffelmann</name>
+        </owner>
+        <source type="git">git://github.com/istoph/gentoo-overlay.git</source>
+        <feed>https://github.com/istoph/gentoo-overlay/commits/master.atom</feed>
+    </repo>
+</repositories>
