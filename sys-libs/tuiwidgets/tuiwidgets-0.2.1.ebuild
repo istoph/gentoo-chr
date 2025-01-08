@@ -1,12 +1,11 @@
 # Copyright 2024 Christoph Hueffelmann <chr@istoph.de>
-# Licensed under the EUPL
 
-EAPI=7
+EAPI=8
 
 PYTHON_COMPAT=( python3_{9..13} )
 inherit meson python-any-r1
 
-DESCRIPTION="low level terminal interface library"
+DESCRIPTION="Terminal User Interface Widget Library"
 HOMEPAGE="https://github.com/tuiwidgets/tuiwidgets"
 LICENSE="Boost-1.0"
 SRC_URI="https://github.com/tuiwidgets/tuiwidgets/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
