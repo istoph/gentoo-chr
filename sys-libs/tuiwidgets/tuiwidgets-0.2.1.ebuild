@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/tuiwidgets/tuiwidgets"
 LICENSE="Boost-1.0"
 SRC_URI="https://github.com/tuiwidgets/tuiwidgets/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
-KEYWORDS=""
+KEYWORDS="amd64 x86"
 
 SLOT="qt5"
 
