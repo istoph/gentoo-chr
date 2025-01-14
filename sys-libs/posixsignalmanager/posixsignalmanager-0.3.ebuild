@@ -1,7 +1,6 @@
 # Copyright 2024 Christoph Hueffelmann <chr@istoph.de>
-# Licensed under the EUPL
 
-EAPI=7
+EAPI=8
 
 PYTHON_COMPAT=( python3_{9..13} )
 inherit meson python-any-r1
@@ -11,7 +10,7 @@ HOMEPAGE="https://github.com/textshell/posixsignalmanager"
 LICENSE="Boost-1.0"
 SRC_URI="https://github.com/textshell/posixsignalmanager/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
-KEYWORDS=""
+KEYWORDS="amd64"
 
 SLOT="0"
 
@@ -22,19 +21,19 @@ BDEPEND="
 	doc? ( >=dev-python/sphinx-3.3.1 )
 	${PYTHON_DEPEND}
 "
-RDEPEND=""
-DEPEND="
+RDEPEND="
 	sys-libs/termpaint
+	dev-qt/qtcore:5
+	test? ( dev-cpp/catch )
+"
+DEPEND="
+	${RDEPEND}
 "
 
-#PATCHES=(
-#	"${FILESDIR}/"0001-tests-Add-missing-after-INFO.patch
-#)
-
 src_configure() {
-#	local emesonargs=(
-#		-Dsystem-catch2=enabled
-#	)
+	local emesonargs=(
+		-Dsystem-catch2=enabled
+	)
 	meson_src_configure
 }
 
@@ -43,8 +42,6 @@ src_compile() {
 }
 
 src_install() {
-	meson_src_install
-
 	use doc && HTML_DOCS=( "${WORKDIR}/html/." )
-	einstalldocs
+	meson_src_install
 }
