@@ -1,7 +1,7 @@
 # Copyright 2023 Thomas Schneider <qsx@chaotikum.eu>
 # Licensed under the EUPL
 
-EAPI=7
+EAPI=8
 
 PYTHON_COMPAT=( python3_{9..13} )
 EGIT_REPO_URI="https://github.com/termpaint/termpaint"
@@ -60,8 +60,6 @@ src_test() {
 }
 
 src_install() {
-	meson_src_install
-
 	use doc && HTML_DOCS=( "${WORKDIR}/html/." )
-	einstalldocs
+	meson_src_install
 }

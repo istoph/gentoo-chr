@@ -1,7 +1,7 @@
 # Copyright 2023 Thomas Schneider <qsx@chaotikum.eu>
 # Licensed under the EUPL
 
-EAPI=7
+EAPI=8
 
 PYTHON_COMPAT=( python3_{9..13} )
 inherit meson python-any-r1
@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/termpaint/termpaint"
 LICENSE="Boost-1.0"
 SRC_URI="https://github.com/termpaint/termpaint/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
-KEYWORDS="~amd64"
+KEYWORDS="amd64"
 
 SLOT="0"
 
@@ -61,8 +61,6 @@ src_compile() {
 }
 
 src_install() {
-	meson_src_install
-
 	use doc && HTML_DOCS=( "${WORKDIR}/html/." )
-	einstalldocs
+	meson_src_install
 }
