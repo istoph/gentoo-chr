@@ -14,8 +14,7 @@ KEYWORDS="amd64"
 
 SLOT="0"
 
-IUSE="doc test tools"
-RESTRICT="!test? ( test )"
+IUSE="doc"
 
 BDEPEND="
 	doc? ( >=dev-python/sphinx-3.3.1 )
@@ -24,7 +23,7 @@ BDEPEND="
 RDEPEND="
 	sys-libs/termpaint
 	dev-qt/qtcore:5
-	test? ( dev-cpp/catch )
+	dev-cpp/catch
 "
 DEPEND="
 	${RDEPEND}
@@ -35,10 +34,6 @@ src_configure() {
 		-Dsystem-catch2=enabled
 	)
 	meson_src_configure
-}
-
-src_compile() {
-	meson_src_compile
 }
 
 src_install() {
