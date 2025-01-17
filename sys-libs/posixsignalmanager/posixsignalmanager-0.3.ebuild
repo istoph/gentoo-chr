@@ -23,7 +23,6 @@ BDEPEND="
 RDEPEND="
 	sys-libs/termpaint
 	dev-qt/qtcore:5
-	dev-cpp/catch
 "
 DEPEND="
 	${RDEPEND}
@@ -31,7 +30,7 @@ DEPEND="
 
 src_configure() {
 	local emesonargs=(
-		-Dsystem-catch2=enabled
+		-Dsystem-catch2=disabled
 	)
 	meson_src_configure
 }
