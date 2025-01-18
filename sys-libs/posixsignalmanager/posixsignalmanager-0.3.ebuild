@@ -2,8 +2,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{9..13} )
-inherit meson python-any-r1
+inherit meson
 
 DESCRIPTION="low level terminal interface library"
 HOMEPAGE="https://github.com/textshell/posixsignalmanager"
@@ -14,12 +13,8 @@ KEYWORDS="amd64"
 
 SLOT="0"
 
-IUSE="doc"
+IUSE=""
 
-BDEPEND="
-	doc? ( >=dev-python/sphinx-3.3.1 )
-	${PYTHON_DEPEND}
-"
 RDEPEND="
 	sys-libs/termpaint
 	dev-qt/qtcore:5
@@ -35,7 +30,3 @@ src_configure() {
 	meson_src_configure
 }
 
-src_install() {
-	use doc && HTML_DOCS=( "${WORKDIR}/html/." )
-	meson_src_install
-}
