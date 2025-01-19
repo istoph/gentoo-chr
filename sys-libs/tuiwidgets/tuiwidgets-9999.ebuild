@@ -24,7 +24,7 @@ IUSE="doc test"
 RESTRICT="!test? ( test )"
 
 BDEPEND="
-	doc? ( >=dev-python/sphinx-3.3.1 )
+	doc? ( >=dev-python/sphinx-3.3.1 dev-python/beautifulsoup4 )
 	${PYTHON_DEPEND}
 "
 RDEPEND="

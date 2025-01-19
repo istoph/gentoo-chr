@@ -18,7 +18,10 @@ IUSE="doc test"
 RESTRICT="!test? ( test )"
 
 BDEPEND="
-	doc? ( >=dev-python/sphinx-3.3.1 )
+	doc? ( 
+		>=dev-python/sphinx-3.3.1 
+		dev-python/beautifulsoup4
+	)
 	${PYTHON_DEPEND}
 "
 RDEPEND="
@@ -42,7 +45,10 @@ src_compile() {
 	meson_src_compile
 
 	if use doc; then
+		pushd ${S}/doc 
+		./qt5.inv.py
 		sphinx-build -b html "${S}/doc" "${WORKDIR}/html" || die "sphinx-build failed"
+		popd
 	fi
 }
 
