@@ -3,7 +3,7 @@
 EAPI=8
 
 PYTHON_COMPAT=( python3_{9..13} )
-inherit meson python-any-r1
+inherit meson
 
 DESCRIPTION="Terminal User Interface Widget Library"
 HOMEPAGE="https://github.com/tuiwidgets/tuiwidgets"
@@ -14,15 +14,10 @@ KEYWORDS="amd64"
 
 SLOT="0"
 
-IUSE="doc test"
+IUSE="test"
 RESTRICT="!test? ( test )"
 
 BDEPEND="
-	doc? (
-		>=dev-python/sphinx-3.3.1
-		dev-python/beautifulsoup4
-		dev-python/sphinxcontrib-images
-	)
 	${PYTHON_DEPEND}
 "
 RDEPEND="
@@ -40,20 +35,4 @@ src_configure() {
 		-Dsystem-catch2=enabled
 	)
 	meson_src_configure
-}
-
-src_compile() {
-	meson_src_compile
-
-	if use doc; then
-		pushd ${S}/doc
-		./qt5.inv.py
-		sphinx-build -b html "${S}/doc" "${WORKDIR}/html" || die "sphinx-build failed"
-		popd
-	fi
-}
-
-src_install() {
-	use doc && HTML_DOCS=( "${WORKDIR}/html/." )
-	meson_src_install
 }
