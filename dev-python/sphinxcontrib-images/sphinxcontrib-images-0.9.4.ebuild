@@ -33,10 +33,19 @@ DEPEND="
 distutils_enable_tests pytest
 
 src_prepare() {
+    # strip rdep specific to namespaces
+    sed -i -e "/'setuptools'/d" setup.py || die
 	distutils-r1_src_prepare
 }
 
-src_install() {
-	distutils-r1_src_install
+python_compile() {
+    distutils-r1_python_compile
+    find "${BUILD_DIR}" -name '__init__.py' -delete || die
+    find "${BUILD_DIR}" -name '*.pth' -delete || die
+}
+
+python_install_all() {
+	distutils-r1_python_install_all
+	find "${D}" -name '*.pth' -delete || die
 }
 
